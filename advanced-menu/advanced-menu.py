@@ -78,7 +78,7 @@ class DropdownView(discord.ui.View):
 
     async def done(self):
         self.stop()
-        await self.msg.edit(view=None)
+        await self.msg.delete()
 
 class AdvancedMenu(commands.Cog):
     def __init__(self, bot):
