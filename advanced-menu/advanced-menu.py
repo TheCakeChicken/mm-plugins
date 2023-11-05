@@ -123,7 +123,7 @@ class AdvancedMenu(commands.Cog):
             dummyMessage.embeds = []
             dummyMessage.stickers = []
 
-            msgs, _ = await thread.reply(dummyMessage)
+            msgs, _ = await thread.channel().send(dummyMessage)
             main_recipient_msg = None
 
             for m in msgs:
