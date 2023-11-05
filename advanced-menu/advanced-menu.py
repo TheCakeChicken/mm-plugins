@@ -50,7 +50,7 @@ class Dropdown(discord.ui.Select):
 
     async def callback(self, interaction: discord.Interaction):
         try:
-            await interaction.response.send_message("You selected {}".format(self.values[0]))
+            # await interaction.response.send_message("You selected {}".format(self.values[0]))
             await interaction.response.defer()
             await self.view.done()
             if self.values[0] == "Main menu":
