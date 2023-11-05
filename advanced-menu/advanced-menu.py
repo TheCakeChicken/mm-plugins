@@ -123,14 +123,7 @@ class AdvancedMenu(commands.Cog):
             dummyMessage.embeds = []
             dummyMessage.stickers = []
 
-            msgs = await thread.channel.send(dummyMessage)
-            main_recipient_msg = None
-
-            for m in msgs:
-                if m.channel.recipient == thread.recipient:
-                    main_recipient_msg = m
-                    break
-
+            main_recipient_msg = await thread.channel.send(dummyMessage)
             await main_recipient_msg.edit(view=DropdownView(self.bot, main_recipient_msg, thread, self.config, self.config["options"], True))
 
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
