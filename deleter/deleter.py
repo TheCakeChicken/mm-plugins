@@ -20,7 +20,7 @@ class Deleter(commands.Cog):
         return self.bot.wait_for('message', check=lambda m: getattr(m.channel, 'recipient', m.channel) == channel and m.author == member, timeout=timeout)
 
     @commands.Cog.listener()
-    async def on_thread_reply(thread, from_mod, message, anonymous, plain):
+    async def on_thread_reply(self, thread, from_mod, message, anonymous, plain):
         """Waits for delete messages to be sent"""
         if not message.author.bot: return
         if not 'User ID: ' in thread.topic: return
