@@ -33,4 +33,4 @@ class Deleter(commands.Cog):
             thread.edit(name=user.username+"-"+user.discriminator)
 
 async def setup(bot):
-    bot.add_cog(Deleter(bot))
+    await bot.add_cog(Deleter(bot))
